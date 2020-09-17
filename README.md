@@ -56,53 +56,27 @@ mockery -name Repository
 ### Test commands for the project
 These are the commands to run the unit and integration tests of the project
 
-#### Test Repository
+#### Test 
 ```
-go test -v -coverprofile=coverage.out -coverpkg=./repository ./test/repository/
-
-go tool cover -html=coverage.out
-```
-
-#### Test Handler
-```
-go test -v -coverprofile=coverage.out -coverpkg=./handler/server/v1 ./test/handler/server/v1/
+go test -v -coverprofile=coverage.out ./...
 
 go tool cover -html=coverage.out
 ```
 
 #### Test Integration
 ```
-go test -v -coverprofile=coverage_integration.out  ./test/
+go test -v -coverprofile=coverage_integration.out  ./test/integration
 
 go tool cover -html=coverage_integration.out
 ```
 
 ### Test coverage commands for the project
 
-#### Test Repository
+#### Test
 ```
-go test -covermode=count -coverprofile=coverage.out -coverpkg=./repository ./test/repository/
+go test -covermode=count -coverprofile=coverage.out ./...
 
 go tool cover -html=coverage.out
 
 go tool cover -func=coverage.out
 ```
-
-#### Test Handler
-```
-go test -covermode=count -coverprofile=coverage.out -coverpkg=./handler/server/v1 ./test/handler/server/v1/
-
-go tool cover -html=coverage.out
-
-go tool cover -func=coverage.out
-```
-
-#### Test Handler
-```
-go test -covermode=count -coverprofile=coverage.out -coverpkg=./handler/server/v1 ./test/handler/server/v1/
-
-go tool cover -html=coverage.out
-
-go tool cover -func=coverage.out
-```
-
